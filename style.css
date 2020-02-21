@@ -1,0 +1,108 @@
+@font-face {
+    font-family: PollyRounded;
+    font-weight: lighter;
+    src: url("fonts/PollyRounded-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: PollyRounded;
+    font-weight: normal;
+    src: url("fonts/PollyRounded-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: PollyRounded;
+    font-weight: bold;
+    src: url("fonts/PollyRounded-Bold.otf") format("opentype");
+}
+
+body {
+  background-color: deepskyblue;
+}
+
+.cardCollectionWrapper {
+}
+
+.sectionHeading {
+  font-family: PollyRounded;
+}
+
+.card {
+  margin: 10px;
+  padding: 20px 20px 50px;
+
+  width: 45%; /* 4 cards per row */
+  display: inline-block;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px 6px rgba(226,228,230,.4);
+  background-color: #fbfbfb;
+
+  text-align: center;
+
+  height: 2em;
+
+  position: relative;
+  cursor: pointer;
+
+  perspective: 1000;
+
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+  animation: 0.7s ease-out 0s 1 rotateIn;
+
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardFront {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100%;
+  color: white;
+  backface-visibility: hidden;
+  background-image: url(questionMarksBackground.png), linear-gradient(45deg, rgba(0,228,255,1) 31%, rgba(0,0,255,1) 100%);
+
+  background-size: 50%, cover;
+  border-radius: 8px;
+}
+
+.cardBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+
+  background-image: linear-gradient(45deg, orange 25%, lime 75%);
+  border-radius: 8px;
+}
+
+.subjectLabel {
+  position: absolute;
+}
+
+.flashTitle {
+  font-family: PollyRounded;
+  font-weight: bold;
+}
+
+.cardFrontTitle {
+  font-family: PollyRounded;
+  font-weight: bold;
+}
+
+
+.mainFlashContent {
+  font-family: PollyRounded;
+  font-weight: lighter;
+}
